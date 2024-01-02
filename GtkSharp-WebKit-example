@@ -1,0 +1,42 @@
+#!/usr/bin/env -S csharp -lib:/usr/lib/mono/webkit2-sharp -lib:/usr/lib/mono/GtkSharp-3.0/ -r:gtk-sharp -r:webkit2-sharp -s
+
+/* Portions and Adaptations Copyright 2015-2023 Hin-Tak Leung */
+
+/* -s for running scripts, -- for interactive usage */
+
+/* C# script to launch a minimal web browser, default to google */
+
+///*
+//  Adapted to gtk3 and webkit2-sharp, and to run in scripting form with
+//  Mono's Interactive C# Shell and Scripting REPL by
+//  Hin-Tak Leung, 2015-2021.
+//*/
+
+///*
+//  This was originally written by Andreia Gaita, perhaps around 2009?
+//
+//  A version of this is still at http://shana.worldofcoding.com/en/browser.html,
+//  the webpage itself dated back to at least 2012.
+//*/
+
+using Gtk;
+using WebKit2;
+
+string url = "https://www.google.com";
+
+if (Args.Length > 0)
+    url = Args[0];
+
+Application.Init ();
+Window window = new Window (url);
+window.SetDefaultSize(1200,600);
+window.Destroyed += delegate (object sender, EventArgs e) {
+    Application.Quit ();
+};
+ScrolledWindow scrollWindow = new ScrolledWindow ();
+WebView webView = new WebView ();
+webView.LoadUri (url);
+scrollWindow.Add (webView);
+window.Add (scrollWindow);
+window.ShowAll ();
+Application.Run ();
