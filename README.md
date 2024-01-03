@@ -6,7 +6,7 @@ if run without arguments.
 
 Point one of these script to [Chroma Check](https://pixelambacht.nl/chromacheck/) to see what
 color fonts which implementation supports. Visit [Color Font Demo](https://yoksel.github.io/color-fonts-demo/)
-for the sample purpose.
+for the same purpose.
 
 The oldest (GtkSharp WebKit) is about a decade old, as part of the
 [Font Validator](https://github.com/HinTak/Font-Validator) work. The python WebKitGTK example
