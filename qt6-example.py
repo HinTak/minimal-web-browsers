@@ -9,7 +9,7 @@
 import sys
 from PyQt6.QtCore import QUrl
 from PyQt6.QtWebEngineWidgets import QWebEngineView
-from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QApplication, QStyleFactory
 
 from PyQt6.QtWebEngineCore import qWebEngineVersion, qWebEngineChromiumVersion, \
 qWebEngineChromiumSecurityPatchVersion
@@ -22,8 +22,12 @@ if len(sys.argv) < 2:
 
     from PyQt6.QtCore import QT_VERSION_STR, PYQT_VERSION_STR
     print("Qt: ", QT_VERSION_STR, "\tPyQt: ", PYQT_VERSION_STR)
+    print(QStyleFactory.keys())
 
 app = QApplication(sys.argv)
+
+# In QT 6.5 onwards,
+app.setStyle('Fusion')
 
 web = QWebEngineView()
 
