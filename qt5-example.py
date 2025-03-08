@@ -31,7 +31,7 @@ if len(sys.argv) > 1:
     url = sys.argv[1]
 web.load(QUrl(url))
 
-web.show()
+#web.show()
 web.loadFinished.connect(on_load_finished)
 
 sys.exit(app.exec_())
