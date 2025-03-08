@@ -31,6 +31,7 @@ app.setStyle('Fusion')
 
 def callback_function(html):
     print(html)
+    app.quit()
 
 def on_load_finished():
     web.page().toHtml(callback_function)

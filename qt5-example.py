@@ -17,6 +17,7 @@ if len(sys.argv) < 2:
 
 def callback_function(html):
     print(html)
+    app.quit()
 
 def on_load_finished():
     web.page().toHtml(callback_function)
