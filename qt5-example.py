@@ -15,6 +15,12 @@ if len(sys.argv) < 2:
     from PyQt5.QtCore import QT_VERSION_STR, PYQT_VERSION_STR
     print("Qt: v", QT_VERSION_STR, "\tPyQt: v", PYQT_VERSION_STR)
 
+def callback_function(html):
+    print(html)
+
+def on_load_finished():
+    web.page().toHtml(callback_function)
+
 app = QApplication(sys.argv)
 
 web = QWebEngineView()
@@ -25,5 +31,6 @@ if len(sys.argv) > 1:
 web.load(QUrl(url))
 
 web.show()
+web.loadFinished.connect(on_load_finished)
 
 sys.exit(app.exec_())

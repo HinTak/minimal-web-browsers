@@ -29,6 +29,12 @@ app = QApplication(sys.argv)
 # In QT 6.5 onwards,
 app.setStyle('Fusion')
 
+def callback_function(html):
+    print(html)
+
+def on_load_finished():
+    web.page().toHtml(callback_function)
+
 web = QWebEngineView()
 
 url = "https://pixelambacht.nl/chromacheck/"
@@ -37,5 +43,6 @@ if len(sys.argv) > 1:
 web.load(QUrl(url))
 
 web.show()
+web.loadFinished.connect(on_load_finished)
 
 sys.exit(app.exec())
