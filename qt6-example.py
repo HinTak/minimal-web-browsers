@@ -33,6 +33,7 @@ def callback_function(html):
     try:
         with open(sys.argv[2], "x") as f:
             f.write(html)
+        # want to quit even if file-write fails from refusal to overwrite existing file.
     finally:
         app.quit()
 
