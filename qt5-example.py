@@ -16,8 +16,11 @@ if len(sys.argv) < 2:
     print("Qt: v", QT_VERSION_STR, "\tPyQt: v", PYQT_VERSION_STR)
 
 def callback_function(html):
-    print(html)
-    app.quit()
+    try:
+        with open(sys.argv[2], "x") as f:
+            f.write(html)
+    finally:
+        app.quit()
 
 def on_load_finished():
     web.page().toHtml(callback_function)
@@ -31,7 +34,10 @@ if len(sys.argv) > 1:
     url = sys.argv[1]
 web.load(QUrl(url))
 
-#web.show()
-web.loadFinished.connect(on_load_finished)
+# Dump in headless mode if there is anything after the URL
+if len(sys.argv) < 3:
+    web.show()
+else:
+    web.loadFinished.connect(on_load_finished)
 
 sys.exit(app.exec_())
