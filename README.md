@@ -12,3 +12,9 @@ The oldest (GtkSharp WebKit) is about a decade old, as part of the
 [Font Validator](https://github.com/HinTak/Font-Validator) work. The python WebKitGTK example
 was written in mid-2023 to replace that; the python QT examples were written to look at OT-SVG support
 in [Chromium](https://github.com/HinTak/chromium-mod-CI) and [QT WebEngine](https://github.com/HinTak/Qt6WE-OT-SVG).
+
+
+# Misc
+
+There is a minimal example elsewhere:
+https://github.com/qutebrowser/qutebrowser/blob/main/scripts/testbrowser/testbrowser_webengine.py
