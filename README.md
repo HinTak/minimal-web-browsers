@@ -1,3 +1,5 @@
+This repository is a collection of Minimal Web Browser implementations written in Python. It is an educational or experimental project aimed at showcasing the basics of building a web browser. This project is aimed at providing a lightweight demonstration or reference for constructing simple web browsers.
+
 # Minimal Web Browser implementations
 
 This is a collection of minimal web browser implementations. Each of them will
